@@ -77,7 +77,9 @@ export default app => {
     wrapAsyncError(async (req, res) => {
       const data = req.body;
       const user = req.user_id;
+      console.log(data);
       await postServiceInstance.insertPost(data, user);
+      //console.log(data);
       return res.sendStatus(201);
     }),
   );
